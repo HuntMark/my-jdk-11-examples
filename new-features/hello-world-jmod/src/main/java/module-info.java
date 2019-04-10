@@ -1,0 +1,2 @@
+module my.rinat.helloworld {
+}
