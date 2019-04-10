@@ -12,4 +12,8 @@
     <artifactId>new-features</artifactId>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>var-keyword</module>
+    </modules>
+
 </project>
