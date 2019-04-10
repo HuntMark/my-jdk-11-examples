@@ -9,6 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0</version>
 
+    <modules>
+        <module>new-features</module>
+    </modules>
+
     <properties>
 
         <java.version>11</java.version>
