@@ -11,6 +11,7 @@
 
     <modules>
         <module>new-features</module>
+        <module>core-java</module>
     </modules>
 
     <properties>
