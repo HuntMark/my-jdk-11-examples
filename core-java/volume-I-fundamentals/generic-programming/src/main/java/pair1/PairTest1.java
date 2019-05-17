@@ -44,4 +44,20 @@ class ArrayAlg {
     static <T> T getMiddle(T... a) {
         return a[a.length / 2];
     }
+
+    static <T extends Comparable> T min(T[] a) {
+        if (a == null || a.length == 0) {
+            return null;
+        }
+        T smallest = a[0];
+
+        for (T s : a) {
+            //noinspection unchecked
+            if (smallest.compareTo(s) > 0) {
+                smallest = s;
+            }
+        }
+
+        return smallest;
+    }
 }
