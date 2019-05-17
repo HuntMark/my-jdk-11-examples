@@ -8,6 +8,7 @@ public class PairTest1 {
         Pair<String> mm = ArrayAlg.minmax(words);
         System.out.println("min = " + mm.getFirst());
         System.out.println("max = " + mm.getSecond());
+        System.out.println("middle = " + ArrayAlg.getMiddle(words));
     }
 }
 
