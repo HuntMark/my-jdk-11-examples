@@ -9,6 +9,7 @@ public class PairTest1 {
         System.out.println("min = " + mm.getFirst());
         System.out.println("max = " + mm.getSecond());
         System.out.println("middle = " + ArrayAlg.getMiddle(words));
+        System.out.println("min = " + ArrayAlg.min(words));
     }
 }
 
