@@ -1,6 +1,6 @@
 package unsynch;
 
-import synch.Bank;
+import synch2.Bank;
 
 /**
  * This program shows data corruption when multiple threads access a data structure.
