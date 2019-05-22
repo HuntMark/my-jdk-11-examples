@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * A bank with a number of bank accounts.
  */
-class Bank {
+public class Bank {
 
     private final double[] accounts;
 
@@ -15,7 +15,7 @@ class Bank {
      * @param n              the number of accounts
      * @param initialBalance the initial balance for each account
      */
-    Bank(int n, double initialBalance) {
+    public Bank(int n, double initialBalance) {
         this.accounts = new double[n];
         Arrays.fill(this.accounts, initialBalance);
     }
@@ -27,7 +27,7 @@ class Bank {
      * @param to     to the account to transfer to
      * @param amount the amount to transfer
      */
-    void transfer(int from, int to, double amount) {
+    public void transfer(int from, int to, double amount) {
         if (accounts[from] < amount) {
             return;
         }
@@ -56,7 +56,6 @@ class Bank {
      *
      * @return the number of accounts
      */
-    @SuppressWarnings("unused")
     public int size() {
         return accounts.length;
     }
