@@ -11,8 +11,8 @@
                         <th>Artist</th>
                     </tr>
                     <tr>
-                        <td>.</td>
-                        <td>.</td>
+                        <td><xsl:value-of select="catalog/cd/title"/></td>
+                        <td><xsl:value-of select="catalog/cd/artist"/></td>
                     </tr>
                 </table>
             </body>
