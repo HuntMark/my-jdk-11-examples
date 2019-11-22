@@ -2,6 +2,8 @@ package completableFutures;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
 
@@ -93,6 +95,26 @@ class CompletableFutureExampleTest {
         //  let future complete
         Thread.sleep(50);
         assertTrue(future.isDone());
+        assertFalse(future.isCompletedExceptionally());
+    }
+
+    @Test
+    void should_be_completed_later_as_function_in_the_then_apply_blocks_execution() {
+        final long expectedExecutionTimeInMillis = 50;
+        var start = Instant.now();
+        CompletableFuture<String> future = CompletableFuture
+                .completedFuture("message")
+                .thenApply(string -> {
+                    try {
+                        Thread.sleep(expectedExecutionTimeInMillis);
+                    } catch (InterruptedException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    return string.toUpperCase();
+                });
+        var finish = Instant.now();
+        assertEquals("MESSAGE", future.getNow("future will always be completed"));
+        assertTrue(Duration.between(start, finish).toMillis() >= expectedExecutionTimeInMillis);
         assertFalse(future.isCompletedExceptionally());
     }
 }
